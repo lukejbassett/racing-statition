@@ -10,6 +10,7 @@ export async function getDriverStandings(season: string) {
     return res.data;
   } catch (error) {
     console.log(error);
+    throw error
   }
 }
 
@@ -21,5 +22,6 @@ export async function getConstructorStandings(season: string) {
     return res.data;
   } catch (error) {
     console.log(error);
+    throw error
   }
 }

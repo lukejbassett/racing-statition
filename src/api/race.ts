@@ -10,6 +10,7 @@ export async function getRaces(season: string) {
     return res.data;
   } catch (error) {
     console.log(error);
+    throw error
   }
 }
 
@@ -21,6 +22,7 @@ export async function getRaceResults(season: string, round: string) {
     return res.data;
   } catch (error) {
     console.log(error);
+    throw error
   }
 }
 
@@ -32,5 +34,6 @@ export async function getQualifyingResults(season: string, round: string) {
     return res.data;
   } catch (error) {
     console.log(error);
+    throw error
   }
 }
