@@ -35,8 +35,26 @@ export interface RaceResult {
   };
 }
 
-export interface RaceTable {
-  season: string;
-  round?: string;
-  Races: Race[];
+export interface RaceResponse {
+  MRData: {
+    xmlns: string;
+    series: string;
+    url: string;
+    limit: string;
+    offset: string;
+    total: string;
+    RaceTable: {
+      Races: Race[];
+    };
+  };
+}
+
+export interface QualifyingResult {
+  number: string;
+  position: string;
+  Driver: Driver;
+  Constructor: Constructor;
+  Q1?: string;
+  Q2?: string;
+  Q3?: string;
 }

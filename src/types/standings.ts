@@ -7,7 +7,27 @@ export interface DriverStandings {
   points: string;
   wins: string;
   Driver: Driver;
-  Constructor: Constructor[];
+  Constructors: Constructor[];
+}
+
+export interface DriverStandingsResponse {
+  MRData: {
+    xmlns: string;
+    series: string;
+    url: string;
+    limit: string;
+    offset: string;
+    total: string;
+    StandingsTable: {
+      season: string;
+      round: string;
+      StandingsLists: {
+        season: string;
+        round: string;
+        DriverStandings: DriverStandings[];
+      }[];
+    };
+  };
 }
 
 export interface ConstructorStandings {
@@ -18,13 +38,22 @@ export interface ConstructorStandings {
   Constructor: Constructor;
 }
 
-export interface StandingsList {
-  season: string;
-  round: string;
-  DriverStandings?: DriverStandings[];
-  ConstructorStandings?: ConstructorStandings[];
-}
-
-export interface StandingsTable {
-  StandingsList: StandingsList[];
+export interface ConstructorStandingsResponse {
+  MRData: {
+    xmlns: string;
+    series: string;
+    url: string;
+    limit: string;
+    offset: string;
+    total: string;
+    StandingsTable: {
+      season: string;
+      round: string;
+      StandingsLists: {
+        season: string;
+        round: string;
+        ConstructorStandings: ConstructorStandings[];
+      }[];
+    };
+  };
 }

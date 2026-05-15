@@ -9,6 +9,16 @@ export interface Driver {
   nationality: string;
 }
 
-export interface DriverTable {
-  Drivers: Driver[];
+export interface DriverResponse {
+  MRData: {
+    xmlns: string;
+    series: string;
+    url: string;
+    limit: string;
+    offset: string;
+    total: string;
+    DriverTable: {
+      Drivers: Driver[];
+    };
+  };
 }

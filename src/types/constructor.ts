@@ -4,3 +4,17 @@ export interface Constructor {
   name: string;
   nationality: string;
 }
+
+export interface ConstructorResponse {
+  MRData: {
+    xmlns: string;
+    series: string;
+    url: string;
+    limit: string;
+    offset: string;
+    total: string;
+    ConstructorTable: {
+      Constructors: Constructor[];
+    };
+  };
+}
