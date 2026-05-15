@@ -44,6 +44,8 @@ export interface RaceResponse {
     offset: string;
     total: string;
     RaceTable: {
+      season: string;
+      round?: string;
       Races: Race[];
     };
   };

@@ -9,13 +9,13 @@ export function DriversPage() {
   return (
     <>
       <ul>
-        {mapData?.map((s) => (
-          <li key={s.Driver.driverId}>
+        {mapData.map((d) => (
+          <li key={d.Driver.driverId}>
             <p>
-              {s.Driver.givenName} {s.Driver.familyName}
+              {d.Driver.givenName} {d.Driver.familyName}
             </p>
-            <p>{s.Constructors[0].name}</p>
-            <p>{s.points}</p>
+            <p>{d.Constructors[0].name}</p>
+            <p>{d.points}</p>
           </li>
         ))}
       </ul>

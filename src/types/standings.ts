@@ -20,7 +20,7 @@ export interface DriverStandingsResponse {
     total: string;
     StandingsTable: {
       season: string;
-      round: string;
+      round?: string;
       StandingsLists: {
         season: string;
         round: string;
@@ -48,7 +48,7 @@ export interface ConstructorStandingsResponse {
     total: string;
     StandingsTable: {
       season: string;
-      round: string;
+      round?: string;
       StandingsLists: {
         season: string;
         round: string;

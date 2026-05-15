@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --color-dmText: oklch(96.8% 0.007 247.896);
+  --color-dmBg: oklch(12.9% 0.042 264.695);
+  --color-dmBg-light: oklch(20.8% 0.042 265.755);
+  --color-dmOutline: oklch(37.2% 0.044 257.287);
+  --color-dmHover: oklch(27.9% 0.041 260.031);
+  --color-accent: oklch(63.7% 0.237 25.331);
+  --color-gold: oklch(79.5% 0.184 86.047);
+  --color-silver: oklch(87.2% 0.01 258.338);
+  --color-bronze: oklch(55.5% 0.163 48.998);
+}
+
+body {
+  color: var(--color-dmText);
+}
