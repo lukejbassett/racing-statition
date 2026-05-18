@@ -1,12 +1,14 @@
 import { useDriverStandings } from "../hooks/useDriverStandings";
+import type { seasonProps } from "./SeasonDropdown";
 
-export function DriverStandings() {
-  const { data, isLoading } = useDriverStandings("2025");
+export function DriverStandings({ season }: seasonProps) {
+  const { data, isLoading, isError } = useDriverStandings(season);
 
   if (isLoading) return <p>Loading driver standings...</p>;
+  if (isError) return <p>Error</p>;
 
   const standingsData =
-    data?.MRData.StandingsTable.StandingsLists[0]?.DriverStandings || [];
+    data?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings || [];
 
   return (
     <div className="bg-dmBg-light border border-dmOutline rounded-2xl overflow-hidden shadow-xl h-full">

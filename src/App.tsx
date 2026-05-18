@@ -6,13 +6,15 @@ import { GamesPage } from "./pages/GamesPage";
 import { AboutPage } from "./pages/AboutPage";
 import { CircuitsPage } from "./pages/CircuitsPage";
 import { Layout } from "./components/Layout";
+import { useState } from "react";
 
 export function App() {
+  const [season, changeSeason] = useState(new Date().getFullYear().toString());
   return (
     <>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Homepage />}></Route>
+        <Route element={<Layout season={season} changeSeason={changeSeason} />}>
+          <Route path="/" element={<Homepage season={season} />}></Route>
           <Route path="/drivers" element={<DriversPage />}></Route>
           <Route path="/teams" element={<TeamsPage />}></Route>
           <Route path="/races" element={<CircuitsPage />}></Route>

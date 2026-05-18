@@ -1,12 +1,15 @@
 import { useConstructorStandings } from "../hooks/useConstructorStandings";
+import type { seasonProps } from "./SeasonDropdown";
 
-export function ConstructorStandings() {
-  const { data, isLoading } = useConstructorStandings("2025");
+export function ConstructorStandings({ season }: seasonProps) {
+  const { data, isLoading, isError } = useConstructorStandings(season);
 
   if (isLoading) return <p>Loading constructor standings...</p>;
+  if (isError) return <p>Error</p>;
 
   const standingsData =
-    data?.MRData.StandingsTable.StandingsLists[0]?.ConstructorStandings || [];
+    data?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings ||
+    [];
 
   return (
     <div className="bg-dmBg-light border border-dmOutline rounded-2xl overflow-hidden shadow-xl h-full">

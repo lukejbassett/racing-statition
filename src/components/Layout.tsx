@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { SeasonDropdown, type dropdownProps } from "./SeasonDropdown";
 
-export function Layout() {
+export function Layout({ season, changeSeason }: dropdownProps) {
   const links = [
     { to: "/", icon: "", label: "Home" },
     { to: "/drivers", icon: "", label: "Drivers" },
@@ -12,10 +13,11 @@ export function Layout() {
   return (
     <div className="flex h-screen bg-dmBg">
       <aside className="w-64 flex flex-col bg-dmBg-light border-r border-dmOutline transition-all duration-300">
-        <div className="p-6 flex justify-center gap-3 border-b border-dmOutline">
+        <div className="p-6 flex flex-col items-center justify-center gap-3 border-b border-dmOutline">
           <span className="text-xl font-black tracking-tighter uppercase italic">
             Racing <span className="text-accent">Statition</span>
           </span>
+          <SeasonDropdown season={season} changeSeason={changeSeason} />
         </div>
         <nav className="flex-1 py-6 px-4 text-lg">
           <ul className="space-y-2">
